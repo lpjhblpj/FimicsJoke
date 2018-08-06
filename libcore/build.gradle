@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion this.rootProject.ext.android.compileSdkVersion
@@ -24,7 +25,12 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation rootProject.ext.dependencies.SupportV7
     implementation rootProject.ext.dependencies.Constraint
+    implementation 'com.android.support:support-v4:27.1.1'
     testImplementation rootProject.ext.test.junit
     androidTestImplementation rootProject.ext.test.runner
     androidTestImplementation rootProject.ext.test.espresso
+
+    implementation rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+
 }

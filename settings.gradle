@@ -1,1 +1,1 @@
-include ':app', ':libcore', ':libioc', ':xuser', ':xsetting'
+include ':app', ':libcore', ':libioc', ':xuser', ':xsetting', ':xwidget'
