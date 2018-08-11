@@ -3,7 +3,7 @@ package com.mic.libcore.task;
 import android.os.Handler;
 import android.os.Looper;
 
-import com.mic.libcore.utils.DeviceInfoTools;
+import com.mic.libcore.utils.Device;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -18,7 +18,7 @@ public abstract class ExecutorTask {
     static {
         Looper looper = Looper.getMainLooper();
         handler = new Handler(looper);
-        int cores = DeviceInfoTools.getNumAvailableCores();
+        int cores = Device.System.getNumAvailableCores();
         executor = Executors.newFixedThreadPool(cores);
     }
 

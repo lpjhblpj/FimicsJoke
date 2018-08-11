@@ -1,1 +1,1 @@
-include ':app', ':libcore', ':libioc', ':xuser', ':xsetting', ':xwidget'
+include ':app', ':libcore', ':libioc', ':xuser', ':xsetting', ':xwidget', ':xsample', ':libbusiness', ':libjava'
