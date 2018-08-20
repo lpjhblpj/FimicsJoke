@@ -21,6 +21,7 @@ public class MainActivity extends BaseActivity {
         //int a = 20 / 1;
 
         //fixDexBug();
+        getResources();
 
 
     }
