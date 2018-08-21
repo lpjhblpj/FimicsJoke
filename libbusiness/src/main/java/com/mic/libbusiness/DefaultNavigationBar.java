@@ -5,7 +5,8 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.hc.baselibrary.navigationbar.AbsNavigationBar;
+import com.mic.libcore.widget.navigationbar.AbsNavigationBar;
+
 
 /**
  * Email 240336124@qq.com
@@ -36,7 +37,11 @@ public class DefaultNavigationBar<D extends
         setOnClickListener(R.id.right_text, getParams().mRightClickListener);
         // 左边 要写一个默认的  finishActivity
         setOnClickListener(R.id.back,getParams().mLeftClickListener);
+
+        setVisibility(R.id.back,getParams().leftIconVisible);
     }
+
+
 
 
     public static class Builder extends AbsNavigationBar.Builder {
@@ -99,6 +104,11 @@ public class DefaultNavigationBar<D extends
             return this;
         }
 
+        public Builder hideLeftIcon() {
+            P.leftIconVisible = View.INVISIBLE;
+            return this;
+        }
+
         public static class DefaultNavigationParams extends
                 AbsNavigationBar.Builder.AbsNavigationParams {
 
@@ -107,6 +117,8 @@ public class DefaultNavigationBar<D extends
             public String mTitle;
 
             public String mRightText;
+
+            public int leftIconVisible = View.VISIBLE;
 
             // 后面还有一些通用的
             public View.OnClickListener mRightClickListener;

@@ -26,10 +26,17 @@ dependencies {
     androidTestImplementation rootProject.ext.dependencies.runner
     androidTestImplementation rootProject.ext.dependencies.espresso
 
+    implementation rootProject.ext.dependencies.recyclerview
+    implementation rootProject.ext.dependencies.butterknife
+    annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
+    implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.litepal
+
+
 
 
     api project(':libbusiness')
-    if(!isApp.toBoolean()){
+    if (!isApp.toBoolean()) {
         api project(':xuser')
     }
 }

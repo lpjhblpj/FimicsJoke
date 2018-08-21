@@ -19,12 +19,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".libcore.LibCoreActivity" />
+
 
         <service
-            android:name=".service.MessageService"
-            android:enabled="false"
-            android:exported="false"></service>
+            android:name=".service.MessageService">
+     <!---->
+
+            <!--<intent-filter>-->
+                <!--<action android:name="com.mic.xsample.aidl.user"/>-->
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+            <!--</intent-filter>-->
+
+        </service>
     </application>
 
 </manifest>

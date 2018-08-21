@@ -10,10 +10,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 /**
+ * Email 240336124@qq.com
+ * Created by Darren on 2017/2/26.
+ * Version 1.0
  * Description: 头部的Builder基类
  */
-
-@SuppressWarnings("unused")
 public abstract class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNavigationParams> implements INavigationBar {
 
     private P mParams;
@@ -44,6 +45,10 @@ public abstract class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNav
         }
     }
 
+    protected void setVisibility(int viewId, int visibility) {
+        findViewById(viewId).setVisibility(visibility);
+    }
+
     /**
      * 设置点击
      * @param viewId
@@ -67,13 +72,12 @@ public abstract class AbsNavigationBar<P extends AbsNavigationBar.Builder.AbsNav
         if(mParams.mParent == null){
             // 获取activity的根布局，View源码
             ViewGroup activityRoot = (ViewGroup) ((Activity)(mParams.mContext))
-                    .findViewById(android.R.id.content);
+                    .getWindow().getDecorView();
             mParams.mParent = (ViewGroup) activityRoot.getChildAt(0);
             Log.e("TAG",mParams.mParent+"");
         }
 
         // 处理Activity的源码，后面再去看
-
 
         if(mParams.mParent == null){
             return;
