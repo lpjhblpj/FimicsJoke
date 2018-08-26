@@ -31,4 +31,11 @@
 
         />
 
+    <Button
+        android:id="@+id/btn_hook_activty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HookActivity"
+        android:textSize="20dp"/>
+
 </LinearLayout>

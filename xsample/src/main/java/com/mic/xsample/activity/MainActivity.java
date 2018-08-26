@@ -32,6 +32,8 @@ public class MainActivity extends BaseActivity {
     Button btnBindService;
     @BindView(R.id.btn_showname)
     Button btnShowname;
+    @BindView(R.id.btn_hook_activty)
+    Button btnHookActivty;
 
 
     @Override
@@ -50,6 +52,26 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
+    @Override
+    protected void initView() {
+
+    }
+
+    @Override
+    protected void initTitle() {
+
+    }
+
+    @Override
+    protected void setContentView() {
+
+    }
+
     @OnClick({R.id.btn_bindService, R.id.btn_showname})
     public void onViewClicked(View view) {
         switch (view.getId()) {
@@ -58,12 +80,18 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_showname:
                 try {
-                    Toast.makeText(this,mUserAidl.getUserName(),Toast.LENGTH_SHORT).show();
-                }catch (Exception e){
+                    Toast.makeText(this, mUserAidl.getUserName(), Toast.LENGTH_SHORT).show();
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 break;
         }
+    }
+
+    @OnClick(R.id.btn_hook_activty)
+    public void onViewClicked() {
+        Intent intent = new Intent(this,TestActivity.class);
+        startActivity(intent);
     }
 
 
@@ -71,7 +99,7 @@ public class MainActivity extends BaseActivity {
 
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
-             mUserAidl = UserAidl.Stub.asInterface(service);
+            mUserAidl = UserAidl.Stub.asInterface(service);
         }
 
         @Override
