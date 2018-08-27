@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="style_textview">
+        <item name="android:color">@color/link_text</item>
+        <item name="android:textSize">@dimen/text_size</item>
+    </style>
+
+</resources>
