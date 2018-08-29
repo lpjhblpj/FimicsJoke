@@ -148,4 +148,6 @@ public class XTextView extends TextView {
         return super.onTouchEvent(event);
 
     }
+
+
 }

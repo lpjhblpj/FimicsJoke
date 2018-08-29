@@ -1,4 +1,4 @@
-package com.mic.xsample.xwidget;
+package com.mic.xsample.activity;
 
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;

@@ -1,0 +1,17 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.google.auto.service:auto-service:1.0-rc3'
+    compile 'com.squareup:javapoet:1.8.0'
+    compile 'com.google.auto:auto-common:0.8'
+    implementation project(':xbuutterknife-annotations')
+}
+
+//注解不能写中文问题
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"

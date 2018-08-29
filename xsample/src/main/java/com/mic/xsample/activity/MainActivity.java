@@ -16,7 +16,6 @@ import com.mic.libcore.hotfix.FixDexManager;
 import com.mic.xsample.R;
 import com.mic.xsample.UserAidl;
 import com.mic.xsample.service.MessageService;
-import com.mic.xsample.xwidget.CustomViewActivity;
 
 import java.io.File;
 
@@ -49,6 +48,7 @@ public class MainActivity extends BaseActivity {
 
         //fixDexBug();
         //getResources();
+
 
 
     }
