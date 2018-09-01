@@ -1,6 +1,7 @@
 package com.mic.xsample.pattern.factory.factory1;
 
-import com.darren.architect_day10.simple2.PreferencesUtils;
+
+import com.mic.xsample.pattern.factory.PreferencesUtils;
 
 /**
  * Created by hcDarren on 2017/9/24.

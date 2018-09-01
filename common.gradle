@@ -60,7 +60,7 @@ ext {
                 'TinkerAndroid'       : "com.tencent.tinker:tinker-android-anno:1.7.7",
 
                 //网络与框架
-                'okhttp'              : 'com.squareup.okhttp3:okhttp:3.3.0',
+                'okhttp'              : 'com.squareup.okhttp3:okhttp:3.9.0',
 
                 //RX
                 'retrofit'            : 'com.squareup.retrofit:retrofit:2.0.0-beta2',

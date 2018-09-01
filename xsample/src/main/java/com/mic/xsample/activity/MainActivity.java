@@ -7,6 +7,7 @@ import android.content.ServiceConnection;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.IBinder;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,6 +17,10 @@ import com.mic.libcore.hotfix.FixDexManager;
 import com.mic.xsample.R;
 import com.mic.xsample.UserAidl;
 import com.mic.xsample.service.MessageService;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
 
@@ -49,7 +54,23 @@ public class MainActivity extends BaseActivity {
         //fixDexBug();
         //getResources();
 
+        // 注册，思考为什么要注册？
+        EventBus.getDefault().register(this);
+        EventBus.getDefault().post("hello eventbus");
 
+
+    }
+
+
+    /**
+     * threadMode 执行的线程方式
+     * priority 执行的优先级，值越大优先级越高
+     * sticky 粘性事件
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN,priority = 100,sticky = true)
+    public void test2(String msg){
+        // 如果有一个地方用 EventBus 发送一个 String 对象，那么这个方法就会被执行
+        Log.e("TAG","msg2 = "+msg);
 
     }
 

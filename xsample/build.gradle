@@ -50,5 +50,7 @@ dependencies {
     implementation rootProject.ext.dependencies.butterknife
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
 
+    implementation rootProject.ext.dependencies.okhttp
+
     api project(':libbusiness')
 }
