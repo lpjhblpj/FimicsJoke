@@ -22,7 +22,6 @@ public class GlideImageLoader extends ViewHolder.HolderImageLoader {
     @Override
     public void displayImage(Context context, ImageView imageView, String imagePath) {
         // Glide 加载图片
-        Glide.with(context).load(imagePath).placeholder(R.drawable.ic_discovery_default_channel)
-                .centerCrop().into(imageView);
+        //Glide.with(context).load(imagePath)(R.drawable.ic_discovery_default_channel).into(imageView);
     }
 }

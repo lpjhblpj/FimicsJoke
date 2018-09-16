@@ -51,6 +51,15 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies.butterknifeCompiler
 
     implementation rootProject.ext.dependencies.okhttp
+    implementation rootProject.ext.dependencies.rxandroid
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.rxbinding2
+    implementation rootProject.ext.dependencies.rxpermissions2
+    implementation rootProject.ext.dependencies.glide
+    implementation rootProject.ext.dependencies.retrofit
+    implementation rootProject.ext.dependencies.convertergson
+    implementation rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.logginginterceptor
 
-    api project(':libbusiness')
+    api project(':libbase')
 }

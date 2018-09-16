@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.mic.libbusiness.utils.HookStartActivityUtil;
 import com.mic.libcore.BaseApplication;
-import com.mic.xsample.activity.ProxyActivity;
+import com.mic.xsample.activity.opensource.ProxyActivity;
 
 public class SampleApp extends BaseApplication{
 

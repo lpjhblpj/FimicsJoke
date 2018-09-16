@@ -35,7 +35,7 @@ dependencies {
 
 
 
-    api project(':libbusiness')
+    api project(':libbase')
     if (!isApp.toBoolean()) {
         api project(':xuser')
     }

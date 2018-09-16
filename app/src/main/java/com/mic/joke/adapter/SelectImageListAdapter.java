@@ -39,8 +39,7 @@ public class SelectImageListAdapter extends CommonRecyclerAdapter<String> {
 
             // 显示图片利用Glide
             ImageView imageView = holder.getView(R.id.image);
-            Glide.with(mContext).load(item)
-                    .centerCrop().into(imageView);
+            Glide.with(mContext).load(item).into(imageView);
         }
     }
 }

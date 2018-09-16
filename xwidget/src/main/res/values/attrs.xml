@@ -68,4 +68,6 @@
         <attr name="stepTextSize" format="dimension" />
         <attr name="stepTextColor" format="color" />
     </declare-styleable>
+
+
 </resources>
