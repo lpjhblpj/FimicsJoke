@@ -10,6 +10,8 @@ import android.net.wifi.WifiManager;
 import android.os.Environment;
 import android.os.StatFs;
 import android.telephony.TelephonyManager;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
 import java.io.File;
 import java.net.InetAddress;
@@ -101,11 +103,7 @@ public final class Device {
 
     }
 
-        /**
-         * 获取手机系统信息
-         * http://blog.51cto.com/2402766/1080837
-         */
-        public static class System {
+    public static class System {
 
             /**
              * 获取手机核心数据
@@ -237,7 +235,38 @@ public final class Device {
             }
 
 
+
+
+        }
+
+    public static class Display{
+
+        public static int spTopx(int sp, Context context){
+            return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,sp,context.getResources().getDisplayMetrics());
+        }
+
+
+        public static  float density(Context context){
+            DisplayMetrics dm = new DisplayMetrics();
+            dm = context.getResources().getDisplayMetrics();
+
+            float density  = dm.density;
+            return density;
+        }
+
+        public  static int[] screenWH(Context context){
+
+            DisplayMetrics dm = new DisplayMetrics();
+            dm = context.getResources().getDisplayMetrics();
+            float density = dm.density; // 屏幕密度（像素比例：0.75/1.0/1.5/2.0）
+            int densityDPI = dm.densityDpi; // 屏幕密度（每寸像素：120/160/240/320）
+            int screenWidth = dm.widthPixels; // 屏幕宽（像素，如：3200px）
+            int screenHeight = dm.heightPixels;
+
+            int wh[] ={screenWidth,screenHeight};
+            return wh;
         }
 
 
     }
+}

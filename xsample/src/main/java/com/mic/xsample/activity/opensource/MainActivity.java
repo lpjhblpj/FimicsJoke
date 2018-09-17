@@ -16,7 +16,6 @@ import com.mic.libcore.activity.BaseActivity;
 import com.mic.libcore.hotfix.FixDexManager;
 import com.mic.xsample.R;
 import com.mic.xsample.UserAidl;
-import com.mic.xsample.activity.view.CustomViewActivity;
 import com.mic.xsample.service.MessageService;
 
 import org.greenrobot.eventbus.EventBus;
@@ -111,11 +110,7 @@ public class MainActivity extends BaseActivity {
         }
     }
 
-    @OnClick(R.id.btn_hook_activty)
-    public void onViewClicked() {
-        Intent intent = new Intent(this,CustomViewActivity.class);
-        startActivity(intent);
-    }
+
 
 
     private class Conn implements ServiceConnection {

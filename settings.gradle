@@ -1,1 +1,1 @@
-include ':app', ':libcore', ':xuser', ':xsetting', ':xwidget', ':xsample', ':libbase', ':libjava', ':xbuutterknife-annotations', ':xbutterknife-compiler', ':xrouter', ':xvideo', ':xlive', ':xlive', ':xhome', ':drouter-base', ':drouter-api',':drouter-compiler'
+include ':app', ':libcore', ':xuser', ':xsetting', ':xwidget', ':xsample', ':libbase', ':libjava', ':xvideo', ':xlive', ':xlive', ':xhome'
