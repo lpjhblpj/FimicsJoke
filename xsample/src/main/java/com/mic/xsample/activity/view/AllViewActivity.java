@@ -35,6 +35,7 @@ public class AllViewActivity extends AppCompatActivity {
         mViews.add("TrackTextView");
         mViews.add("ProgressBar");
         mViews.add("ViewPager");
+        mViews.add("ShapeView");
     }
 
 
