@@ -10,6 +10,7 @@ import android.os.Bundle;
 import com.mic.xsample.R;
 import com.mic.xsample.fragment.ProgressBarFragment;
 import com.mic.xsample.fragment.QQStepFragment;
+import com.mic.xsample.fragment.RatingBarFragment;
 import com.mic.xsample.fragment.ShapeFragment;
 import com.mic.xsample.fragment.TrackTextViewFragment;
 import com.mic.xsample.fragment.XTextViewFragment;
@@ -25,6 +26,7 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int PROGRESS_BAR=3;
     private static final int VIEW_PAGER=4;
     private static final int SHAPE_VIEW=5;
+    private static final int RATING_BAR=6;
 
 
 
@@ -75,6 +77,11 @@ public class ViewItemActivity extends AppCompatActivity {
             case SHAPE_VIEW:
                 ShapeFragment shapeFragment=new ShapeFragment();
                 transaction.replace(R.id.container,shapeFragment);
+                transaction.commit();
+                break;
+            case RATING_BAR:
+                RatingBarFragment ratingBarFragment=new RatingBarFragment();
+                transaction.replace(R.id.container,ratingBarFragment);
                 transaction.commit();
                 break;
         }
