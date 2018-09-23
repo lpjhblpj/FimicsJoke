@@ -37,6 +37,11 @@ public class AllViewActivity extends AppCompatActivity {
         mViews.add("ViewPager");
         mViews.add("ShapeView");
         mViews.add("RatingBar");
+        mViews.add("LetterSideBar");
+        mViews.add("ViewDrawFlow");
+        mViews.add("TagLayout");
+        mViews.add("TouchView");
+        mViews.add("TouchViewGroup");
     }
 
 

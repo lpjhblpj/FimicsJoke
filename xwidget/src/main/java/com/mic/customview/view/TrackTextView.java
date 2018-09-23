@@ -1,4 +1,4 @@
-package com.mic.customview.trackview;
+package com.mic.customview.view;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

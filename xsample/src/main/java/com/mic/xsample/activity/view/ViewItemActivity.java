@@ -1,24 +1,30 @@
 package com.mic.xsample.activity.view;
 
 import android.content.Intent;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
+import com.mic.customview.view.TouchVIew;
 import com.mic.xsample.R;
+import com.mic.xsample.fragment.LetterSideBarFragment;
 import com.mic.xsample.fragment.ProgressBarFragment;
 import com.mic.xsample.fragment.QQStepFragment;
 import com.mic.xsample.fragment.RatingBarFragment;
 import com.mic.xsample.fragment.ShapeFragment;
+import com.mic.xsample.fragment.TagLayoutFragment;
+import com.mic.xsample.fragment.TouchViewFragment;
+import com.mic.xsample.fragment.TouchViewGroupFragment;
 import com.mic.xsample.fragment.TrackTextViewFragment;
 import com.mic.xsample.fragment.XTextViewFragment;
 
 public class ViewItemActivity extends AppCompatActivity {
 
 
-
+    private FragmentTransaction transaction;
 
     private static final int X_TEXTVIEW=0;
     private static final int QQ_STEP=1;
@@ -27,6 +33,11 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int VIEW_PAGER=4;
     private static final int SHAPE_VIEW=5;
     private static final int RATING_BAR=6;
+    private static final int LETTER_SIDEBAR=7;
+    private static final int VIEW_DRAW_FLOW=8;
+    private static final int TAG_LAYOUT=9;
+    private static final int TOUCH_VIEW=10;
+    private static final int TOUCH_VIEWGROUP=11;
 
 
 
@@ -41,50 +52,61 @@ public class ViewItemActivity extends AppCompatActivity {
         String name = intent.getStringExtra("name");
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction=fragmentManager.beginTransaction();
-        showItemView(id,transaction);
+        transaction=fragmentManager.beginTransaction();
+        showItemView(id);
     }
 
-    private void showItemView(int id,FragmentTransaction transaction){
+    private void showItemView(int id){
         switch (id){
-
-
             case  X_TEXTVIEW:
-                XTextViewFragment xTextViewFragment = new XTextViewFragment();
-                transaction.replace(R.id.container,xTextViewFragment);
-                transaction.commit();
+                replaceFragment(new XTextViewFragment());
                 break;
             case  QQ_STEP:
-                QQStepFragment qqStepFragment = new QQStepFragment();
-                transaction.replace(R.id.container,qqStepFragment);
-                transaction.commit();
+                replaceFragment(new QQStepFragment());
                 break;
             case TRACK_TEXTVIEW:
-                TrackTextViewFragment trackTextViewFragment = new TrackTextViewFragment();
-                transaction.replace(R.id.container,trackTextViewFragment);
-                transaction.commit();
+                replaceFragment(new TrackTextViewFragment());
                 break;
             case PROGRESS_BAR:
-                ProgressBarFragment progressBarFragment = new ProgressBarFragment();
-                transaction.replace(R.id.container,progressBarFragment);
-                transaction.commit();
+                replaceFragment(new ProgressBarFragment());
                 break;
             case VIEW_PAGER:
-                finish();
-                Intent intent = new Intent(ViewItemActivity.this,ViewPagerActivity.class);
-                startActivity(intent);
+                startActivity(ViewPagerActivity.class);
                 break;
             case SHAPE_VIEW:
-                ShapeFragment shapeFragment=new ShapeFragment();
-                transaction.replace(R.id.container,shapeFragment);
-                transaction.commit();
+                replaceFragment(new ShapeFragment());
                 break;
             case RATING_BAR:
-                RatingBarFragment ratingBarFragment=new RatingBarFragment();
-                transaction.replace(R.id.container,ratingBarFragment);
-                transaction.commit();
+                replaceFragment(new RatingBarFragment());
+                break;
+            case LETTER_SIDEBAR:
+                replaceFragment(new LetterSideBarFragment());
+                break;
+            case VIEW_DRAW_FLOW:
+                startActivity(ViewDrawFlowActivity.class);
+                break;
+            case TAG_LAYOUT:
+                replaceFragment(new TagLayoutFragment());
+                break;
+            case TOUCH_VIEW:
+                replaceFragment(new TouchViewFragment());
+                break;
+            case TOUCH_VIEWGROUP:
+                replaceFragment(new TouchViewGroupFragment());
                 break;
         }
+    }
+
+
+    private void replaceFragment(Fragment fragment){
+        transaction.replace(R.id.container,fragment);
+        transaction.commit();
+    }
+
+    private void startActivity(Class clazz){
+        finish();
+        Intent intent = new Intent(ViewItemActivity.this,clazz);
+        startActivity(intent);
     }
 
 

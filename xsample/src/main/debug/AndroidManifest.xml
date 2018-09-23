@@ -20,9 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.opensource.ProxyActivity" />
-
-        <activity android:name=".activity.view.ViewItemActivity"/>
-        <activity android:name=".activity.view.ViewPagerActivity"/>
+        <activity android:name=".activity.view.ViewItemActivity" />
+        <activity android:name=".activity.view.ViewPagerActivity" />
 
         <service android:name=".service.MessageService">
 
@@ -36,9 +35,7 @@
 
         </service>
 
-
-
-
+        <activity android:name=".activity.view.ViewDrawFlowActivity"></activity>
     </application>
 
 </manifest>

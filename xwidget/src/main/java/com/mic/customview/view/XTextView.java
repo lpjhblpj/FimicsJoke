@@ -57,11 +57,11 @@ public class XTextView extends TextView {
         this.mContext = context;
 
         //获取自定义属性
-        TypedArray array = context.obtainStyledAttributes(attrs, com.mic.xwidget.R.styleable.TextView);
+        TypedArray array = context.obtainStyledAttributes(attrs, com.mic.xwidget.R.styleable.DrawFlowTextView);
 
-        mText = array.getString(R.styleable.TextView_text);
-        mSize = array.getDimensionPixelSize(R.styleable.TextView_size,mSize);
-        mColor =array.getColor(R.styleable.TextView_color,mColor);
+        mText = array.getString(R.styleable.DrawFlowTextView_text);
+        mSize = array.getDimensionPixelSize(R.styleable.DrawFlowTextView_size,mSize);
+        mColor =array.getColor(R.styleable.DrawFlowTextView_color,mColor);
 
 
         mPaint = new Paint();

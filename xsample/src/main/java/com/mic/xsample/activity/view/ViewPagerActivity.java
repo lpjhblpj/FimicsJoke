@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
-import com.mic.customview.trackview.TrackTextView;
+import com.mic.customview.view.TrackTextView;
 import com.mic.xsample.R;
 import com.mic.xsample.fragment.ItemFragment;
 

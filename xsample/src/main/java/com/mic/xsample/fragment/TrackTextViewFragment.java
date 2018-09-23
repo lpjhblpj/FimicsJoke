@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mic.customview.trackview.TrackTextView;
+import com.mic.customview.view.TrackTextView;
 import com.mic.xsample.R;
 
 /**

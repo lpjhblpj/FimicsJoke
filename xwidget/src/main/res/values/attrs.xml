@@ -41,7 +41,7 @@
              reference 资源(drawable)
 
     -->
-    <declare-styleable name="TextView">
+    <declare-styleable name="DrawFlowTextView">
 
         <attr name="text"  format="string"/>
         <attr name="color" format="color"/>
