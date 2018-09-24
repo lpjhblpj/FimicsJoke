@@ -42,6 +42,7 @@ public class AllViewActivity extends AppCompatActivity {
         mViews.add("TagLayout");
         mViews.add("TouchView");
         mViews.add("TouchViewGroup");
+        mViews.add("SlidingMenu");
     }
 
 

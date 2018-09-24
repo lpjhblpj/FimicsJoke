@@ -15,6 +15,7 @@ import com.mic.xsample.fragment.ProgressBarFragment;
 import com.mic.xsample.fragment.QQStepFragment;
 import com.mic.xsample.fragment.RatingBarFragment;
 import com.mic.xsample.fragment.ShapeFragment;
+import com.mic.xsample.fragment.SlidingMenuFragment;
 import com.mic.xsample.fragment.TagLayoutFragment;
 import com.mic.xsample.fragment.TouchViewFragment;
 import com.mic.xsample.fragment.TouchViewGroupFragment;
@@ -38,6 +39,7 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int TAG_LAYOUT=9;
     private static final int TOUCH_VIEW=10;
     private static final int TOUCH_VIEWGROUP=11;
+    private static final int SLIDING_MENU=12;
 
 
 
@@ -58,10 +60,10 @@ public class ViewItemActivity extends AppCompatActivity {
 
     private void showItemView(int id){
         switch (id){
-            case  X_TEXTVIEW:
+            case X_TEXTVIEW:
                 replaceFragment(new XTextViewFragment());
                 break;
-            case  QQ_STEP:
+            case QQ_STEP:
                 replaceFragment(new QQStepFragment());
                 break;
             case TRACK_TEXTVIEW:
@@ -93,6 +95,9 @@ public class ViewItemActivity extends AppCompatActivity {
                 break;
             case TOUCH_VIEWGROUP:
                 replaceFragment(new TouchViewGroupFragment());
+                break;
+            case SLIDING_MENU:
+                replaceFragment(new SlidingMenuFragment());
                 break;
         }
     }
