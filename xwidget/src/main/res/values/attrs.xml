@@ -86,6 +86,7 @@
     </declare-styleable>
 
     <declare-styleable name="SlidingMenu">
+        <attr name="rightPadding" format="dimension"/>
         <attr name="menuRightMargin" format="dimension"/>
     </declare-styleable>
 </resources>

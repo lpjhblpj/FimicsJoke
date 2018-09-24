@@ -12,6 +12,7 @@ import com.mic.customview.view.TouchVIew;
 import com.mic.xsample.R;
 import com.mic.xsample.fragment.LetterSideBarFragment;
 import com.mic.xsample.fragment.ProgressBarFragment;
+import com.mic.xsample.fragment.QQSlidingMenuFragment;
 import com.mic.xsample.fragment.QQStepFragment;
 import com.mic.xsample.fragment.RatingBarFragment;
 import com.mic.xsample.fragment.ShapeFragment;
@@ -40,6 +41,7 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int TOUCH_VIEW=10;
     private static final int TOUCH_VIEWGROUP=11;
     private static final int SLIDING_MENU=12;
+    private static final int QQ_SLIDING_MENU=13;
 
 
 
@@ -98,6 +100,9 @@ public class ViewItemActivity extends AppCompatActivity {
                 break;
             case SLIDING_MENU:
                 replaceFragment(new SlidingMenuFragment());
+                break;
+            case QQ_SLIDING_MENU:
+                replaceFragment(new QQSlidingMenuFragment());
                 break;
         }
     }

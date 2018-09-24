@@ -14,8 +14,6 @@ import android.widget.HorizontalScrollView;
 
 import com.mic.xwidget.R;
 
-import static com.mic.customview.slidingmenu.ScreenUtils.getScreenWidth;
-
 public class SlidingMenu extends HorizontalScrollView {
 
     // 菜单的宽度

@@ -43,6 +43,7 @@ public class AllViewActivity extends AppCompatActivity {
         mViews.add("TouchView");
         mViews.add("TouchViewGroup");
         mViews.add("SlidingMenu");
+        mViews.add("QQSlidingMenu");
     }
 
 
