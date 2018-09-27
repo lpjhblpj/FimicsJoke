@@ -21,6 +21,7 @@ import com.mic.xsample.fragment.TagLayoutFragment;
 import com.mic.xsample.fragment.TouchViewFragment;
 import com.mic.xsample.fragment.TouchViewGroupFragment;
 import com.mic.xsample.fragment.TrackTextViewFragment;
+import com.mic.xsample.fragment.VerticalDragListViewFragment;
 import com.mic.xsample.fragment.XTextViewFragment;
 
 public class ViewItemActivity extends AppCompatActivity {
@@ -42,6 +43,7 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int TOUCH_VIEWGROUP=11;
     private static final int SLIDING_MENU=12;
     private static final int QQ_SLIDING_MENU=13;
+    private static final int VERTICAL_DRAG_LISTVIEW=14;
 
 
 
@@ -103,6 +105,9 @@ public class ViewItemActivity extends AppCompatActivity {
                 break;
             case QQ_SLIDING_MENU:
                 replaceFragment(new QQSlidingMenuFragment());
+                break;
+            case VERTICAL_DRAG_LISTVIEW:
+                replaceFragment(new VerticalDragListViewFragment());
                 break;
         }
     }
