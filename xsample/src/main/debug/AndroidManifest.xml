@@ -12,16 +12,26 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.view.AllViewActivity">
+        <activity android:name=".activity.opensource.AllOpenSourceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activity.opensource.OpenSourceItemActivity" />
         <activity android:name=".activity.opensource.ProxyActivity" />
-        <activity android:name=".activity.view.ViewItemActivity" />
-        <activity android:name=".activity.view.ViewPagerActivity" />
+        <activity android:name=".activity.opensource.GlideActivity" />
+        <activity android:name=".activity.opensource.HandleActivity" />
+        <activity android:name=".activity.opensource.MainActivity" />
+        <activity android:name=".activity.opensource.OkhttpActivity" />
+        <activity android:name=".activity.opensource.RetrofitActivity" />
+        <activity android:name=".activity.opensource.RxBindingActivity" />
+        <activity android:name=".activity.opensource.RxBitmapActivity" />
+        <activity android:name=".activity.opensource.RxPermissionsActivity" />
+
+        <activity android:name=".activity.view.ViewDrawFlowActivity"></activity>
 
         <service android:name=".service.MessageService">
 
@@ -35,7 +45,7 @@
 
         </service>
 
-        <activity android:name=".activity.view.ViewDrawFlowActivity"></activity>
+
     </application>
 
 </manifest>

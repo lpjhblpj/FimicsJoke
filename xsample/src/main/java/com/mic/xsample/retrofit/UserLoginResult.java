@@ -1,29 +1,12 @@
 package com.mic.xsample.retrofit;
 
-public class UserLoginResult {
 
 
-    public UserInfo data;
+/**
+ * Created by hcDarren on 2017/12/16.
+ */
 
-    public class UserInfo{
-        String userName;
-        String password;
-
-        public String getUserName() {
-            return userName;
-        }
-
-        public void setUserName(String userName) {
-            this.userName = userName;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-
-        public void setPassword(String password) {
-            this.password = password;
-        }
-    }
-
+public class UserLoginResult extends BaseResult {
+    // 成功是一个对象正常，不成功是一个 String （出错）
+    public Object data;
 }
