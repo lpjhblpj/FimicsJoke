@@ -1,7 +1,9 @@
-package com.mic.xsample.fragment;
+package com.mic.xsample.fragment.view;
+
 
 
 import android.os.Bundle;
+
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,10 +14,10 @@ import com.mic.xsample.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class QQSlidingMenuFragment extends Fragment {
+public class XTextViewFragment extends Fragment {
 
 
-    public QQSlidingMenuFragment() {
+    public XTextViewFragment() {
         // Required empty public constructor
     }
 
@@ -24,8 +26,7 @@ public class QQSlidingMenuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_qqsliding_menu, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_xtext_view, container, false);
     }
 
 }

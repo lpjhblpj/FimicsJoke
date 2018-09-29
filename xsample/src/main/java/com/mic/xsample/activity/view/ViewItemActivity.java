@@ -8,21 +8,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 
-import com.mic.customview.view.TouchVIew;
 import com.mic.xsample.R;
-import com.mic.xsample.fragment.LetterSideBarFragment;
-import com.mic.xsample.fragment.ProgressBarFragment;
-import com.mic.xsample.fragment.QQSlidingMenuFragment;
-import com.mic.xsample.fragment.QQStepFragment;
-import com.mic.xsample.fragment.RatingBarFragment;
-import com.mic.xsample.fragment.ShapeFragment;
-import com.mic.xsample.fragment.SlidingMenuFragment;
-import com.mic.xsample.fragment.TagLayoutFragment;
-import com.mic.xsample.fragment.TouchViewFragment;
-import com.mic.xsample.fragment.TouchViewGroupFragment;
-import com.mic.xsample.fragment.TrackTextViewFragment;
-import com.mic.xsample.fragment.VerticalDragListViewFragment;
-import com.mic.xsample.fragment.XTextViewFragment;
+import com.mic.xsample.fragment.view.LetterSideBarFragment;
+import com.mic.xsample.fragment.view.LockPatternViewFragment;
+import com.mic.xsample.fragment.view.ProgressBarFragment;
+import com.mic.xsample.fragment.view.QQSlidingMenuFragment;
+import com.mic.xsample.fragment.view.QQStepFragment;
+import com.mic.xsample.fragment.view.RatingBarFragment;
+import com.mic.xsample.fragment.view.ShapeFragment;
+import com.mic.xsample.fragment.view.SlidingMenuFragment;
+import com.mic.xsample.fragment.view.TagLayoutFragment;
+import com.mic.xsample.fragment.view.TouchViewFragment;
+import com.mic.xsample.fragment.view.TouchViewGroupFragment;
+import com.mic.xsample.fragment.view.TrackTextViewFragment;
+import com.mic.xsample.fragment.view.VerticalDragListViewFragment;
+import com.mic.xsample.fragment.view.XTextViewFragment;
 
 public class ViewItemActivity extends AppCompatActivity {
 
@@ -44,6 +44,7 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int SLIDING_MENU=12;
     private static final int QQ_SLIDING_MENU=13;
     private static final int VERTICAL_DRAG_LISTVIEW=14;
+    private static final int LOCK_PATTERNVIEW=15;
 
 
 
@@ -108,6 +109,9 @@ public class ViewItemActivity extends AppCompatActivity {
                 break;
             case VERTICAL_DRAG_LISTVIEW:
                 replaceFragment(new VerticalDragListViewFragment());
+                break;
+            case LOCK_PATTERNVIEW:
+                replaceFragment(new LockPatternViewFragment());
                 break;
         }
     }

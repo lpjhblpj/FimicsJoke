@@ -1,4 +1,4 @@
-package com.mic.xsample.fragment;
+package com.mic.xsample.fragment.view;
 
 
 import android.content.Context;

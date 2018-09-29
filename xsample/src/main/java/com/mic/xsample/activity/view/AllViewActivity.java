@@ -45,6 +45,7 @@ public class AllViewActivity extends AppCompatActivity {
         mViews.add("SlidingMenu");
         mViews.add("QQSlidingMenu");
         mViews.add("VerticalDragListView");
+        mViews.add("LockPatternView");
     }
 
 

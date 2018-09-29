@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 
 import com.mic.customview.view.TrackTextView;
 import com.mic.xsample.R;
-import com.mic.xsample.fragment.ItemFragment;
+import com.mic.xsample.fragment.view.ItemFragment;
 
 import java.util.ArrayList;
 import java.util.List;

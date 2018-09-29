@@ -1,4 +1,4 @@
-package com.mic.xsample.fragment;
+package com.mic.xsample.fragment.view;
 
 
 import android.os.Bundle;
@@ -12,10 +12,10 @@ import com.mic.xsample.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LetterSideBarFragment extends Fragment {
+public class SlidingMenuFragment extends Fragment {
 
 
-    public LetterSideBarFragment() {
+    public SlidingMenuFragment() {
         // Required empty public constructor
     }
 
@@ -24,7 +24,7 @@ public class LetterSideBarFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_letter_side_bar, container, false);
+        View view =inflater.inflate(R.layout.fragment_sliding_menu, container, false);
         return view;
     }
 

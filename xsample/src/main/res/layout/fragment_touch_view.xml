@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.TouchViewFragment">
+    tools:context=".fragment.view.TouchViewFragment">
 
    <com.mic.customview.view.TouchVIew
        android:id="@+id/touch_view"

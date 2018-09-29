@@ -48,4 +48,9 @@ dependencies {
 
 
     api project(path: ':libcore')
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+apply plugin: 'kotlin-android'
+repositories {
+    mavenCentral()
 }
