@@ -10,6 +10,7 @@ import com.mic.xsample.retrofit.HttpCallback;
 import com.mic.xsample.retrofit.Result;
 import com.mic.xsample.retrofit.RetrofitClient;
 import com.mic.xsample.retrofit.UserInfo;
+import com.mic.xsample.retrofitarch.sample.XRetrofitClient;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -25,7 +26,8 @@ public class RetrofitActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retrofit);
         //testGet();
-        getHttpCallBack();
+        //getHttpCallBack();
+        testMyRetrofit();
     }
 
 
@@ -64,6 +66,10 @@ public class RetrofitActivity extends AppCompatActivity {
                         Toast.makeText(RetrofitActivity.this,msg,Toast.LENGTH_LONG).show();
                     }
                 });
+    }
+
+    private void testMyRetrofit(){
+        XRetrofitClient.getServiceApi().userLogin("android","root");
     }
 
 }
