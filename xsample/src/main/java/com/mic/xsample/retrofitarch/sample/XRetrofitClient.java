@@ -1,7 +1,7 @@
 package com.mic.xsample.retrofitarch.sample;
 
 
-import com.mic.xsample.retrofitarch.Retrofit;
+import com.mic.xsample.retrofitarch.XRetrofit;
 
 import okhttp3.OkHttpClient;
 
@@ -22,7 +22,7 @@ public class XRetrofitClient {
         // 3. 还有就是 baseUrl 问题？ (Retrofit 找不到任何入口可以修改)
         //        3.1 不同的 baseUrl 构建不同的 Retrofit 对象 （直不应该首选）
         //        3.2 自己想办法，取巧也行走漏洞
-        Retrofit retrofit = new Retrofit.Builder()
+        XRetrofit retrofit = new XRetrofit.Builder()
                 // 访问后台接口的主路径
                 .baseUrl("http://192.168.31.204:8080/")
                 // 添加解析转换工厂,Gson 解析，Xml解析，等等

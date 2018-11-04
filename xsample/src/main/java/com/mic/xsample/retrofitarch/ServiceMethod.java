@@ -1,8 +1,6 @@
 package com.mic.xsample.retrofitarch;
 
 
-import android.util.Log;
-
 import com.google.gson.Gson;
 import com.mic.xsample.retrofitarch.http.GET;
 import com.mic.xsample.retrofitarch.http.POST;
@@ -19,7 +17,7 @@ public class ServiceMethod {
 
     private static final String TAG ="ServiceMethod";
 
-    final Retrofit retrofit;
+    final XRetrofit retrofit;
     final Method method;
     String httpMethod;
     String relativeUrl;
@@ -50,7 +48,7 @@ public class ServiceMethod {
     }
 
     public static class Builder {
-        final Retrofit retrofit;
+        final XRetrofit retrofit;
         final Method method;
         final Annotation[] methodAnnotations;
         String httpMethod;
@@ -58,7 +56,7 @@ public class ServiceMethod {
         Annotation[][] parameterAnnotations;
         final ParameterHandler<?>[] parameterHandlers;
 
-        public Builder(Retrofit retrofit, Method method) {
+        public Builder(XRetrofit retrofit, Method method) {
             this.retrofit = retrofit;
             this.method = method;
             methodAnnotations = method.getAnnotations();

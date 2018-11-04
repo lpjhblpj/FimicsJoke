@@ -1,1 +1,1 @@
-include ':app', ':libcore', ':xuser', ':xsetting', ':xwidget', ':xsample', ':libbase', ':libjava', ':xvideo', ':xlive', ':xlive', ':xhome'
+include ':app', ':libcore', ':xuser', ':xsetting', ':xwidget', ':xsample', ':libbase', ':libjava', ':xvideo', ':xlive', ':xlive', ':xhome', ':demo-arouter'

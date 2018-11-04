@@ -43,6 +43,12 @@ dependencies {
     implementation rootProject.ext.dependencies.SupportV7
     implementation rootProject.ext.dependencies.SupportV4
     implementation rootProject.ext.dependencies.Constraint
+    implementation rootProject.ext.dependencies.recyclerview
+    implementation rootProject.ext.dependencies.appcompat
+    implementation rootProject.ext.dependencies.cardview
+    implementation rootProject.ext.dependencies.design
+
+
     implementation 'com.android.support:support-v4:27.1.1'
     testImplementation rootProject.ext.dependencies.junit
     androidTestImplementation rootProject.ext.dependencies.runner
@@ -52,6 +58,7 @@ dependencies {
     implementation rootProject.ext.dependencies.okhttp
     implementation rootProject.ext.dependencies.rxandroid
     implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.adapterrxjava
     implementation rootProject.ext.dependencies.rxbinding2
     implementation rootProject.ext.dependencies.rxpermissions2
     implementation rootProject.ext.dependencies.glide

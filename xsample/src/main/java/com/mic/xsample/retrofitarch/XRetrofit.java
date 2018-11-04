@@ -12,13 +12,13 @@ import java.util.concurrent.ConcurrentHashMap;
 import okhttp3.Call;
 import okhttp3.OkHttpClient;
 
-public class Retrofit {
+public class XRetrofit {
     private static final String TAG ="Retrofit";
     final String baseUrl;
     final Call.Factory factory;
     private Map<Method ,ServiceMethod> serviceMethodMapCache = new ConcurrentHashMap<>();
 
-    public Retrofit(Builder builder) {
+    public XRetrofit(Builder builder) {
         this.baseUrl=builder.baseUrl;
         this.factory=builder.factory;
     }
@@ -81,13 +81,13 @@ public class Retrofit {
         }
 
 
-        public Retrofit build(){
+        public XRetrofit build(){
 
             if(factory==null){
                 factory=new OkHttpClient();
             }
 
-            return  new Retrofit(this);
+            return  new XRetrofit(this);
         }
 
     }

@@ -38,6 +38,8 @@ public class AllOpenSourceActivity extends AppCompatActivity {
         mViews.add("RxBinding");
         mViews.add("RxBitmap");
         mViews.add("RxPermissions");
+        mViews.add("RxRetrofit");
+        mViews.add("子线程更新UI");
     }
 
 

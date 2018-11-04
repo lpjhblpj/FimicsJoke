@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import com.mic.xsample.R;
 import com.mic.xsample.fragment.view.LetterSideBarFragment;
+import com.mic.xsample.fragment.view.LoadingViewFragment;
 import com.mic.xsample.fragment.view.LockPatternViewFragment;
 import com.mic.xsample.fragment.view.ProgressBarFragment;
 import com.mic.xsample.fragment.view.QQSlidingMenuFragment;
@@ -45,6 +46,12 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int QQ_SLIDING_MENU=13;
     private static final int VERTICAL_DRAG_LISTVIEW=14;
     private static final int LOCK_PATTERNVIEW=15;
+    private static final int SWIPE_REFRESH_LAYOUT=16;
+    private static final int NESTED_SCROLLVIEW =17;
+    private static final int STATUS_BAR =18;
+    private static final int MY_SCROLL_VIEW=19;
+    private static final int BEHAVIOR =20;
+    private static final int LOADING_VIEW =21;
 
 
 
@@ -112,6 +119,24 @@ public class ViewItemActivity extends AppCompatActivity {
                 break;
             case LOCK_PATTERNVIEW:
                 replaceFragment(new LockPatternViewFragment());
+                break;
+            case SWIPE_REFRESH_LAYOUT:
+                startActivity(SwipeActivity.class);
+                break;
+            case NESTED_SCROLLVIEW:
+                startActivity(NestedActivity.class);
+                break;
+            case STATUS_BAR:
+                startActivity(StatusBarActivity.class);
+                break;
+            case MY_SCROLL_VIEW:
+                startActivity(MyScrollViewActivity.class);
+                break;
+            case BEHAVIOR:
+                startActivity(BehaviorActivity.class);
+                break;
+            case LOADING_VIEW:
+                replaceFragment(new LoadingViewFragment());
                 break;
         }
     }

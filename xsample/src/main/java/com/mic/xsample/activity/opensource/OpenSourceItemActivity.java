@@ -38,6 +38,8 @@ public class OpenSourceItemActivity extends AppCompatActivity {
     private static final int RXBINDING=5;
     private static final int RXBITMAP=6;
     private static final int RXPERMISSIONS=7;
+    private static final int RX_RETROFIT=8;
+    private static final int UPDATE_UI =9;
 
 
 
@@ -82,6 +84,12 @@ public class OpenSourceItemActivity extends AppCompatActivity {
                 break;
             case RXPERMISSIONS:
                 startActivity(RxPermissionsActivity.class);
+                break;
+            case RX_RETROFIT:
+                startActivity(RxRetrofitActivity.class);
+                break;
+            case UPDATE_UI:
+                startActivity(UpdateUIActivity.class);
                 break;
 
         }
