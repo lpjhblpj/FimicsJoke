@@ -52,6 +52,9 @@ public class AllViewActivity extends AppCompatActivity {
         mViews.add("MyScrollView");
         mViews.add("Behavior");
         mViews.add("LoadingView");
+        mViews.add("ListMenu");
+        mViews.add("CircleLoadingView");
+        mViews.add("MessageBubbleView");
     }
 
 

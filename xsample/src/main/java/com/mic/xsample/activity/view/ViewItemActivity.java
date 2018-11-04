@@ -9,9 +9,12 @@ import android.os.Bundle;
 
 
 import com.mic.xsample.R;
+import com.mic.xsample.fragment.view.CircleLoadingViewFragment;
 import com.mic.xsample.fragment.view.LetterSideBarFragment;
+import com.mic.xsample.fragment.view.ListMenuFragment;
 import com.mic.xsample.fragment.view.LoadingViewFragment;
 import com.mic.xsample.fragment.view.LockPatternViewFragment;
+import com.mic.xsample.fragment.view.MessageBubbleViewFragment;
 import com.mic.xsample.fragment.view.ProgressBarFragment;
 import com.mic.xsample.fragment.view.QQSlidingMenuFragment;
 import com.mic.xsample.fragment.view.QQStepFragment;
@@ -52,6 +55,9 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int MY_SCROLL_VIEW=19;
     private static final int BEHAVIOR =20;
     private static final int LOADING_VIEW =21;
+    private static final int LIST_MENU=22;
+    private static final int CIRCLE_LOADINGVIEW =23;
+    private static final int MESSAGE_BUBBLEVIEW=24;
 
 
 
@@ -137,6 +143,15 @@ public class ViewItemActivity extends AppCompatActivity {
                 break;
             case LOADING_VIEW:
                 replaceFragment(new LoadingViewFragment());
+                break;
+            case LIST_MENU:
+                replaceFragment(new ListMenuFragment());
+                break;
+            case CIRCLE_LOADINGVIEW:
+                replaceFragment(new CircleLoadingViewFragment());
+                break;
+            case MESSAGE_BUBBLEVIEW:
+                replaceFragment(new MessageBubbleViewFragment());
                 break;
         }
     }
