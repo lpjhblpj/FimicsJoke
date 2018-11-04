@@ -14,6 +14,8 @@ import com.mic.xsample.fragment.view.LetterSideBarFragment;
 import com.mic.xsample.fragment.view.ListMenuFragment;
 import com.mic.xsample.fragment.view.LoadingViewFragment;
 import com.mic.xsample.fragment.view.LockPatternViewFragment;
+import com.mic.xsample.fragment.view.LoveLayoutFragment;
+import com.mic.xsample.fragment.view.MessageBubbleView1Fragment;
 import com.mic.xsample.fragment.view.MessageBubbleViewFragment;
 import com.mic.xsample.fragment.view.ProgressBarFragment;
 import com.mic.xsample.fragment.view.QQSlidingMenuFragment;
@@ -58,6 +60,8 @@ public class ViewItemActivity extends AppCompatActivity {
     private static final int LIST_MENU=22;
     private static final int CIRCLE_LOADINGVIEW =23;
     private static final int MESSAGE_BUBBLEVIEW=24;
+    private static final int MESSAGE_BUBBLEVIEW1=25;
+    private static final int LOVE_LAYOUT =26;
 
 
 
@@ -152,6 +156,12 @@ public class ViewItemActivity extends AppCompatActivity {
                 break;
             case MESSAGE_BUBBLEVIEW:
                 replaceFragment(new MessageBubbleViewFragment());
+                break;
+            case MESSAGE_BUBBLEVIEW1:
+                replaceFragment(new MessageBubbleView1Fragment());
+                break;
+            case LOVE_LAYOUT:
+                replaceFragment(new LoveLayoutFragment());
                 break;
         }
     }
