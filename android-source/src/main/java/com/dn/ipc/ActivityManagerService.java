@@ -2534,7 +2534,7 @@ public final class ActivityManagerService extends ActivityManagerNative
             return;
         }
 
-        /* In progress: compute new position first, so we can avoid doing work
+        /* In progress: com.mic.optimization.compute new position first, so we can avoid doing work
            if the process is not actually going to move.  Not yet working.
         int addIndex;
         int nextIndex;
@@ -17242,7 +17242,7 @@ public final class ActivityManagerService extends ActivityManagerNative
                                 || schedGroup == Process.THREAD_GROUP_BG_NONINTERACTIVE
                                 || procState > ActivityManager.PROCESS_STATE_TOP);
                         i++) {
-                    // XXX should compute this based on the max of
+                    // XXX should com.mic.optimization.compute this based on the max of
                     // all connected clients.
                     ConnectionRecord cr = clist.get(i);
                     if (cr.binding.client == app) {

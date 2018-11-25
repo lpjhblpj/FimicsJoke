@@ -1,5 +1,7 @@
 package com.mic.optimization.activity;
 
+import android.os.Debug;
+import android.os.Trace;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -17,8 +19,10 @@ public class LeakContextActivity extends AppCompatActivity {
         //CommUtil commUtil = CommUtil.getInstance(getApplicationContext());
         //CommUtil commUtil = CommUtil.getInstance(this);
 
+        Debug.startMethodTracing();
         LeakView  leakView = new LeakView(this);
         setContentView(leakView);
+        Debug.stopMethodTracing();
 
     }
 
