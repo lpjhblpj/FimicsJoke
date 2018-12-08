@@ -3,19 +3,25 @@ package com.mic.xsample.fragment.view;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.mic.xsample.R;
 import com.mic.xsample.view.LoveLayout;
+import com.mic.xsample.xaspect.CheckNet;
+
+import org.aspectj.lang.annotation.Pointcut;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class LoveLayoutFragment extends Fragment implements View.OnClickListener {
 
+    private static final String TAG ="check";
 
     private LoveLayout mLoveLayout;
     private Button btnAdd;
@@ -37,8 +43,16 @@ public class LoveLayoutFragment extends Fragment implements View.OnClickListener
     }
 
 
+    @CheckNet
     @Override
     public void onClick(View v) {
-        mLoveLayout.addLove();
+        //mLoveLayout.addLove();
+
+
+    }
+
+    @CheckNet
+    public void sayHello(){
+
     }
 }
