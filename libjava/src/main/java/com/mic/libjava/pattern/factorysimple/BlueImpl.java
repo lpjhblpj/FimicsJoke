@@ -1,4 +1,4 @@
-package com.mic.libjava.pattern.simplefactory;
+package com.mic.libjava.pattern.factorysimple;
 
 /**
  * 最少知识原则，这里不要写成public的

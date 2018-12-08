@@ -1,11 +1,17 @@
 package com.mic.libjava.pattern.factorymethod;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@RunWith(JUnit4.class)
 public class Client {
 
-	public static void main(String[] args) {
+	@Test
+	public  void main() {
 		String data = "我的数据";
 		ExportDBOperator op = new ExportDBOperator();
 		op.export(data);

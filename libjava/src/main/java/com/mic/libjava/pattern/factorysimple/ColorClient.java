@@ -1,4 +1,4 @@
-package com.mic.libjava.pattern.simplefactory;
+package com.mic.libjava.pattern.factorysimple;
 
 
 public class ColorClient {
@@ -7,6 +7,8 @@ public class ColorClient {
 
         IColorApi colorApi=Factory.create(Factory.COLOR.BLUE);
         colorApi.save();
+
+        Factory.create(YellowImpl.class);
 
     }
 

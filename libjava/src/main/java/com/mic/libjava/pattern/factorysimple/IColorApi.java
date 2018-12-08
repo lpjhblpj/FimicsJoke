@@ -1,4 +1,4 @@
-package com.mic.libjava.pattern.simplefactory;
+package com.mic.libjava.pattern.factorysimple;
 
 public interface IColorApi {
 
