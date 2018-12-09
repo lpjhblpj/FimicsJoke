@@ -27,9 +27,10 @@ public class Room {
 		// TODO Auto-generated method stub
 		return "---->floor  "+floor+"   window   "+window;
 	}
-	public void show()
+	public Room show()
 	{
-		
+
+		return null;
 	}
 	
 }
