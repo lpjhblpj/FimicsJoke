@@ -70,6 +70,7 @@ dependencies {
     implementation rootProject.ext.dependencies.logginginterceptor
     api project(':libbase')
     api project(':libaop')
+    api project(':libsqlite')
 }
 
 

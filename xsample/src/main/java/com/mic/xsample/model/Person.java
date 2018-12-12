@@ -1,8 +1,14 @@
 package com.mic.xsample.model;
 
+import com.mic.libsqlite.annotation.DbFiled;
+import com.mic.libsqlite.annotation.DbTable;
+
+@DbTable("person")
 public class Person {
 
+    @DbFiled("name")
     private String name;
+    @DbFiled("age")
     private int age;
 
     // 默认的构造方法
