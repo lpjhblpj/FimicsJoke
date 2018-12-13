@@ -3,18 +3,25 @@ package com.mic.joke.activity;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.mic.customview.view.TrackTextView;
+import com.mic.home.fragment.HomeFragment;
 import com.mic.joke.R;
 import com.mic.joke.view.Bottom;
 import com.mic.joke.view.BottomLayout;
@@ -25,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private BottomLayout bottomLayout;
+    private ViewPager mViewPager;
     private ArrayList<Bottom> bottomList = new ArrayList<Bottom>();
 
 
@@ -43,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        NavigationView navView = (NavigationView) findViewById(R.id.nav_view);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
+        NavigationView navView =findViewById(R.id.nav_view);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
@@ -60,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,12 +83,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        initViewPager();
 
     }
 
     private void initView(){
         bottomLayout=this.findViewById(R.id.bottom_layoty);
+        mViewPager=this.findViewById(R.id.view_pager);
 
     }
 
@@ -91,6 +100,46 @@ public class MainActivity extends AppCompatActivity {
         bottomList.add(new Bottom("消息",R.drawable.tab_msg));
         bottomList.add(new Bottom("用户",R.drawable.tab_user));
     }
+
+    /**
+     * 初始化ViewPager
+     */
+    private void initViewPager() {
+        mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                return new HomeFragment();
+            }
+
+            @Override
+            public int getCount() {
+                return 1;
+            }
+
+            @Override
+            public void destroyItem(ViewGroup container, int position, Object object) {
+
+            }
+        });
+
+        mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+    }
+
 
     /**
      * 加载创建 menu 布局

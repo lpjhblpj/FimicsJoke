@@ -30,6 +30,6 @@ dependencies {
     implementation rootProject.ext.dependencies.gson
     api project(':libcore')
     //implementation project(':drouter-api')
-    api project(':xwidget')
+    api project(':libwidget')
 
 }

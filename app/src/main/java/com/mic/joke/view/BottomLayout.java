@@ -127,6 +127,7 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
         }
 
 
+        int h = this.getHeight();
         addIndicatorView();
         moveIndicator(mIndex);
 
@@ -158,7 +159,6 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
                 int bottom=childView.getBottom();
                 childView.layout(left,top,right,bottom);
             }
-
         }
 
     }
