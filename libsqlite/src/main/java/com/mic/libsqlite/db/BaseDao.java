@@ -52,6 +52,21 @@ public class BaseDao<T> implements IDao<T> {
     }
 
     @Override
+    public QuerySupport<T> querySupport() {
+        return null;
+    }
+
+    @Override
+    public int delete(String whereClause, String... whereArgs) {
+        return 0;
+    }
+
+    @Override
+    public int update(T obj, String whereClause, String... whereArgs) {
+        return 0;
+    }
+
+    @Override
     public List<T> queryAll() {
         return querySupport.queryAll();
     }

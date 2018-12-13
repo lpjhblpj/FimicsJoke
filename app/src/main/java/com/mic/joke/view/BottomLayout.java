@@ -126,6 +126,7 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
             }
         }
 
+
         addIndicatorView();
         moveIndicator(mIndex);
 
@@ -159,7 +160,6 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
             }
 
         }
-
 
     }
 
