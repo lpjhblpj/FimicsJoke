@@ -36,12 +36,9 @@
         <activity android:name=".activity.opensource.GlideActivity" />
         <activity android:name=".activity.opensource.HandleActivity" />
         <activity android:name=".activity.opensource.MainActivity" />
-        <activity android:name=".activity.opensource.OkhttpActivity" />
-        <activity android:name=".activity.opensource.RetrofitActivity" />
         <activity android:name=".activity.opensource.RxBindingActivity" />
         <activity android:name=".activity.opensource.RxBitmapActivity" />
         <activity android:name=".activity.opensource.RxPermissionsActivity" />
-        <activity android:name=".activity.opensource.RxRetrofitActivity" />
         <activity android:name=".activity.opensource.UpdateUIActivity"/>
         <service android:name=".service.MessageService">
 

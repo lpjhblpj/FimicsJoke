@@ -13,10 +13,11 @@ import android.view.View;
 
 import com.mic.xwidget.R;
 
+
 /**
  * Description: 仿QQ运动步数
  */
-public class QQStepView extends View {
+ public class QQStepView extends View {
 
     private int mOuterColor = Color.RED;
     private int mInnerColor = Color.BLUE;

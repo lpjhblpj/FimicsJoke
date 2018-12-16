@@ -12,7 +12,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,26 +19,39 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.mic.customview.view.TrackTextView;
 import com.mic.home.fragment.HomeFragment;
 import com.mic.joke.R;
 import com.mic.joke.view.Bottom;
 import com.mic.joke.view.BottomLayout;
+import com.mic.libcore.fragment.BaseFragment;
+import com.mic.frame.model.User;
+import com.mic.message.fragment.MessageFragment;
+import com.mic.news.fragment.NewsFragment;
+import com.mic.user.fragment.UserFragment;
+import com.mic.video.fragment.VideoFragment;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
+@SuppressWarnings("unused")
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private BottomLayout bottomLayout;
     private ViewPager mViewPager;
     private ArrayList<Bottom> bottomList = new ArrayList<Bottom>();
+    private final ArrayList<BaseFragment> fragments = new ArrayList<>();
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
         setContentView(R.layout.activity_main);
+
 
         initData();
         initView();
@@ -47,7 +59,8 @@ public class MainActivity extends AppCompatActivity {
         bottomLayout.setmOnTabChanged(new BottomLayout.OnTabChanged() {
             @Override
             public void onSelected(int index) {
-
+               mViewPager.setCurrentItem(index,true);
+               EventBus.getDefault().post(new User(index));
             }
         });
 
@@ -99,21 +112,38 @@ public class MainActivity extends AppCompatActivity {
         bottomList.add(new Bottom("视频",R.drawable.tab_video));
         bottomList.add(new Bottom("消息",R.drawable.tab_msg));
         bottomList.add(new Bottom("用户",R.drawable.tab_user));
+
+        fragments.add(new HomeFragment());
+        fragments.add(new NewsFragment());
+        fragments.add(new VideoFragment());
+        fragments.add(new MessageFragment());
+        fragments.add(new UserFragment());
     }
 
-    /**
-     * 初始化ViewPager
-     */
+
+
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void eventTest(User user){
+       Toast.makeText(this,"main"+user.age,Toast.LENGTH_LONG).show();
+    }
+
+
     private void initViewPager() {
+
+        mViewPager.setOffscreenPageLimit(20);
+        mViewPager.setPageMargin(10);
         mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+
+
             @Override
             public Fragment getItem(int position) {
-                return new HomeFragment();
+                return fragments.get(position);
             }
 
             @Override
             public int getCount() {
-                return 1;
+                return fragments.size();
             }
 
             @Override
@@ -130,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-
+              bottomLayout.updateIndicator(position);
             }
 
             @Override
@@ -176,5 +206,9 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }

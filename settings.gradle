@@ -1,1 +1,1 @@
-include ':app', ':libcore', ':tab-user', ':libwidget', ':demo-sample', ':libbase', ':demo-java', ':tab-video', ':tab-message', ':tab-home', ':demo-optimization', ':libaop', ':libsqlite', ':tab-news'
+include ':app', ':app-core', ':tab-user', ':libwidget', ':demo-sample',  ':demo-java', ':tab-video', ':tab-message', ':tab-home', ':demo-optimization', ':libaop', ':libsqlite', ':tab-news', ':libokhttp', ':app-frame'

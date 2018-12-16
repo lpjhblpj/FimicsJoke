@@ -45,6 +45,9 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
     //当前指示器的位置
     private int mIndex;
 
+    private boolean mIsFirstWindowChanged = true;
+
+
     public BottomLayout(Context context) {
         this(context,null);
     }
@@ -114,22 +117,29 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
     @Override
     public void onWindowFocusChanged(boolean hasWindowFocus) {
         super.onWindowFocusChanged(hasWindowFocus);
-        LinearLayout subView = (LinearLayout) getChildAt(0);
-        perViewHeight =subView.getHeight();
 
-        int count = subView.getChildCount();
-        for(int i=0;i<count;i++){
-            View view=subView.getChildAt(i);
+        if(mIsFirstWindowChanged&& hasWindowFocus){
+            LinearLayout subView = (LinearLayout) getChildAt(0);
+            perViewHeight =subView.getHeight();
 
-            if(view instanceof ImageView){
-                indicatorLineWidth = (int) (view.getWidth()/mDensity);
+            int count = subView.getChildCount();
+            for(int i=0;i<count;i++){
+                View view=subView.getChildAt(i);
+
+                if(view instanceof ImageView){
+                    indicatorLineWidth = (int) (view.getWidth()/mDensity);
+                }
             }
+
+
+            int h = this.getHeight();
+
+            addIndicatorView();
+            moveIndicator(mIndex);
         }
 
+        mIsFirstWindowChanged =false;
 
-        int h = this.getHeight();
-        addIndicatorView();
-        moveIndicator(mIndex);
 
     }
 
@@ -214,6 +224,14 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
             indicatorAnimator.start();
         }
         this.mIndex=index;
+    }
+
+    public void updateIndicator(int index){
+        moveIndicator(index);
+        if(this.getChildAt(index) instanceof LinearLayout){
+            LinearLayout childView = (LinearLayout) this.getChildAt(index);
+            changeBackground(childView);
+        }
     }
 
 

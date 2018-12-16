@@ -89,5 +89,8 @@ ext {
 
                  //数据库
                  'litepal'            :'org.litepal.android:core:1.5.0',
+
+                 //EventBus
+                 'eventbus'           :'org.greenrobot:eventbus:3.0.0',
                  ]
 }

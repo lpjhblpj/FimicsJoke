@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import com.mic.home.adapter.FruitAdapter;
 import com.mic.home.moded.Fruit;
 import com.mic.libcore.fragment.BaseFragment;
-import com.mic.user.R;
+import com.mic.home.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -109,4 +109,6 @@ public class HomeFragment extends BaseFragment {
             fruitList.add(fruits[index]);
         }
     }
+
+
 }

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mic.home.moded.Fruit;
-import com.mic.user.R;
+import com.mic.home.R;
 
 import java.util.List;
 

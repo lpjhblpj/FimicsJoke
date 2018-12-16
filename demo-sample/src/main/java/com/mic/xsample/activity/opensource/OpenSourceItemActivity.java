@@ -71,10 +71,10 @@ public class OpenSourceItemActivity extends AppCompatActivity {
                 startActivity(MainActivity.class);
                 break;
             case OKHTTP:
-                startActivity(OkhttpActivity.class);
+                //startActivity(OkhttpActivity.class);
                 break;
             case RETROFIT:
-                startActivity(RetrofitActivity.class);
+                //startActivity(RetrofitActivity.class);
                 break;
             case RXBINDING:
                 startActivity(RxBitmapActivity.class);
@@ -86,7 +86,7 @@ public class OpenSourceItemActivity extends AppCompatActivity {
                 startActivity(RxPermissionsActivity.class);
                 break;
             case RX_RETROFIT:
-                startActivity(RxRetrofitActivity.class);
+               // startActivity(RxRetrofitActivity.class);
                 break;
             case UPDATE_UI:
                 startActivity(UpdateUIActivity.class);

@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.mic.user.R;
+import com.mic.home.R;
 
 public class HomeMainActivity extends AppCompatActivity {
 

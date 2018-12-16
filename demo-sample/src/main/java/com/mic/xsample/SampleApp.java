@@ -3,9 +3,8 @@ package com.mic.xsample;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.mic.libbusiness.utils.HookStartActivityUtil;
+
 import com.mic.libcore.BaseApplication;
-import com.mic.xsample.activity.opensource.ProxyActivity;
 
 public class SampleApp extends BaseApplication{
 
@@ -43,14 +42,4 @@ public class SampleApp extends BaseApplication{
     }
 
 
-    private void hookActivity(){
-        HookStartActivityUtil hookStartActivityUtil =
-                new HookStartActivityUtil(this,ProxyActivity.class);
-        try {
-            hookStartActivityUtil.hookStartActivity();
-            hookStartActivityUtil.hookLaunchActivity();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }
