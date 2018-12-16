@@ -6,6 +6,7 @@ if (!isApp.toBoolean()) {
 apply plugin: 'com.jakewharton.butterknife'
 
 
+
 android {
     compileSdkVersion this.rootProject.ext.android.compileSdkVersion
     defaultConfig {
@@ -50,6 +51,5 @@ dependencies {
     //EventBUs
     implementation rootProject.ext.dependencies.eventbus
     api project(':app-frame')
-
 
 }

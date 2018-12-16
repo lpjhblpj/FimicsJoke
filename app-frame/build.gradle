@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+
 android {
     compileSdkVersion this.rootProject.ext.android.compileSdkVersion
     defaultConfig {
