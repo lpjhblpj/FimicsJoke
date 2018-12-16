@@ -1,4 +1,4 @@
-package com.mic.xsample;
+package com.mic.xsample.db;
 
 import android.support.test.runner.AndroidJUnit4;
 import android.util.Log;

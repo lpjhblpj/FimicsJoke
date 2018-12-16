@@ -96,45 +96,11 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.login) {
-            //login();
-            testGet();
+            login();
         }
     }
 
-    public void testGet() {
-        FOkhttpClient client = new FOkhttpClient();
-        FRequestBody requestBody = new FRequestBody();
-        FPublicParams publicParams= FPublicParams.getInstance();
-        final FRequest request = new FRequest.Builder()
-                .url("http://192.168.31.204:8080/login")
-                .get()
-                .build();
-        final FCall call = client.newCall(request);
 
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                FResponse response =call.execute();
-//                String body =response.string();
-//                String a =body.toString();
-//            }
-//        }).start();
-
-
-
-        call.enqueue(new FCallback() {
-            @Override
-            public void onFailure(FCall call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(FCall call, FResponse response) {
-                String srt = response.string();
-                String a = "1";
-            }
-        });
-    }
 
 
 

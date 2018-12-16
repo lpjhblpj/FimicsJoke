@@ -1,4 +1,4 @@
-package com.mic.xsample;
+package com.mic.xsample.okhttp3;
 
 import android.support.test.runner.AndroidJUnit4;
 
