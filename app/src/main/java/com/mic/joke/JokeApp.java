@@ -2,7 +2,7 @@ package com.mic.joke;
 
 
 
-import org.litepal.LitePalApplication;
+
 
 
 public class JokeApp extends LitePalApplication {

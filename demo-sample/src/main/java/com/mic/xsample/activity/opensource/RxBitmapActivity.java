@@ -128,7 +128,7 @@ public class RxBitmapActivity extends AppCompatActivity {
         canvas.drawBitmap(bitmap, 0, 0, p);
         //绘制文字
         canvas.drawText(mark, 0, h / 2, p);
-        canvas.save(Canvas.ALL_SAVE_FLAG);
+        //canvas.save(Canvas.ALL_SAVE_FLAG);
         canvas.restore();
         return bmp;
     }

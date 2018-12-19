@@ -39,9 +39,8 @@ dependencies {
     implementation rootProject.ext.dependencies.glide
     implementation rootProject.ext.dependencies.picasso
 
-    //数据库
-    implementation rootProject.ext.dependencies.litepal
-
+    //EventBus
+    implementation rootProject.ext.dependencies.eventbus
 
 
     api project(':libaop')

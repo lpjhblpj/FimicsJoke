@@ -48,8 +48,6 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     apply from :rootProject.file('build_depends.gradle')
-    //EventBUs
-    implementation rootProject.ext.dependencies.eventbus
     api project(':app-frame')
 
 }
