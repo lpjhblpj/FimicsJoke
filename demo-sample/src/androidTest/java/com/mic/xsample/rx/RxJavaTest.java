@@ -9,7 +9,9 @@ import org.junit.runner.RunWith;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
+import io.reactivex.Scheduler;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 
 @RunWith(AndroidJUnit4.class)
@@ -32,6 +34,7 @@ public class RxJavaTest {
          * 被观察者  订阅 观察者
          */
         Observable.just("url")
+                .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<String>() {
                     @Override
                     public void onError(Throwable e) {

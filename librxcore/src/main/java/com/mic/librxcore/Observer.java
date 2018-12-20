@@ -1,5 +1,4 @@
 package com.mic.librxcore;
-import android.support.annotation.NonNull;
 
 /**
  * Created by hcDarren on 2017/12/2.
@@ -7,7 +6,7 @@ import android.support.annotation.NonNull;
  */
 public interface Observer<T> {
     void onSubscribe();
-    void onNext(@NonNull T item);
-    void onError(@NonNull Throwable e);
+    void onNext( T item);
+    void onError(Throwable e);
     void onComplete();
 }

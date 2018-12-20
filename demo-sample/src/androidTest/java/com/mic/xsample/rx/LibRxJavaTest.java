@@ -7,10 +7,12 @@ import com.mic.librxcore.Consumer;
 import com.mic.librxcore.Function;
 import com.mic.librxcore.Observable;
 import com.mic.librxcore.Observer;
+import com.mic.librxcore.Schedulers;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+@SuppressWarnings("all")
 @RunWith(AndroidJUnit4.class)
 public class LibRxJavaTest {
 
@@ -53,6 +55,7 @@ public class LibRxJavaTest {
                 return s.concat("ddd");
             }
         })
+        .subscribeOn(Schedulers.io())
         .subscribe(new Consumer<String>() {
             @Override
             public void onNext(String s) {

@@ -1,7 +1,11 @@
 package com.mic.librxcore;
 
 
-@SuppressWarnings("unused")
+/**
+ * Created by hcDarren on 2017/12/2.
+ * 静态代理的包装类
+ */
+
 public class ObservableMap<T,R> extends Observable<R> {
     final Observable<T> source;// 前面的 Observable
     final Function<T, R> function;// 当前转换
@@ -12,8 +16,8 @@ public class ObservableMap<T,R> extends Observable<R> {
 
     @Override
     protected void subscribeActual(Observer<R> observer) {
-        // 第一步
-        // 对 observer 包裹了一层
+        // 对 observer 包裹了一层，静态代理包裹 source 永远是上游的 Observable 对象
+        // observer 代表的是下游给我们的封装好的 observer 对象
         source.subscribe(new MapObserver(observer,function));
     }
 
@@ -31,7 +35,7 @@ public class ObservableMap<T,R> extends Observable<R> {
         }
 
         @Override
-        public void onNext(T item) {
+        public void onNext( T item) {
             // item 是 String  xxxUrl
             // 要去转换 String -> Bitmap
             // 4.第四步 function.apply

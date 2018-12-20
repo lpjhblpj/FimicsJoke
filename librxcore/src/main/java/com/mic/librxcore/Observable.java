@@ -1,5 +1,11 @@
 package com.mic.librxcore;
 
+import android.graphics.Bitmap;
+
+/**
+ * Created by hcDarren on 2017/12/2.
+ * 被观察者
+ */
 
 public abstract class Observable<T> implements ObservableSource<T>{
 
@@ -29,5 +35,13 @@ public abstract class Observable<T> implements ObservableSource<T>{
 
     public <R> Observable<R> map(Function<T, R> function) {
         return onAssembly(new ObservableMap<>(this,function));
+    }
+
+    public Observable<T> subscribeOn(Schedulers schedulers) {
+        return onAssembly(new ObservableSchedulers(this,schedulers));
+    }
+
+    public Observable<T> observerOn(Schedulers schedulers) {
+        return onAssembly(new ObserverOnObservable(this,schedulers));
     }
 }
