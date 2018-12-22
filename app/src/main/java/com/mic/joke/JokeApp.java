@@ -1,11 +1,9 @@
 package com.mic.joke;
 
 
+import android.app.Application;
 
-
-
-
-public class JokeApp extends LitePalApplication {
+public class JokeApp extends Application {
 
     //public static PatchManager mPatchManager;
 

@@ -3,7 +3,6 @@ package com.mic.user.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,19 +10,17 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.mic.frame.model.Result;
+import com.mic.frame.retrofit.HttpCallback;
+import com.mic.frame.retrofit.RetrofitClient;
 import com.mic.libcore.fragment.BaseFragment;
-import com.mic.frame.model.User;
+import com.mic.frame.model.user.User;
 import com.mic.frame.Host;
-import com.mic.libokhttp.FCall;
-import com.mic.libokhttp.FCallback;
-import com.mic.libokhttp.FOkhttpClient;
-import com.mic.libokhttp.FPublicParams;
-import com.mic.libokhttp.FRequest;
-import com.mic.libokhttp.FRequestBody;
-import com.mic.libokhttp.FResponse;
 import com.mic.user.R;
 import com.mic.user.UURL;
 
+import com.mic.user.api.UserApi;
+import com.mic.user.model.UserResult;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -35,12 +32,10 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import retrofit2.Retrofit;
 
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
+@SuppressWarnings("all")
 public class UserFragment extends BaseFragment implements View.OnClickListener {
 
     private Button btnLogin;
@@ -83,7 +78,7 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void eventTest(User user){
-        Toast.makeText(getContext(),"user"+user.age,Toast.LENGTH_LONG).show();
+        Toast.makeText(getContext(),"user",Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -96,12 +91,31 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         int i = v.getId();
         if (i == R.id.login) {
-            login();
+            //login();
+            login("java","java");
         }
     }
 
 
 
+    private void login(String name,String password){
+        Retrofit retrofit =RetrofitClient.getInstance().getRetrofit();
+        UserApi userApi =retrofit.create(UserApi.class);
+        retrofit2.Call<Result<User>> call = userApi.login("java","java");
+        call.enqueue(new HttpCallback<User>() {
+            @Override
+            public void onSucceed(User result) {
+                User u = result;
+                int a =5;
+            }
+
+            @Override
+            public void onError(String code, String msg) {
+              String xcode =code;
+            }
+        });
+
+    }
 
 
     private void login(){
@@ -117,7 +131,7 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-
+                String msg = e.getMessage();
             }
 
             @Override

@@ -24,7 +24,7 @@ import com.mic.joke.R;
 import com.mic.joke.view.Bottom;
 import com.mic.joke.view.BottomLayout;
 import com.mic.libcore.fragment.BaseFragment;
-import com.mic.frame.model.User;
+import com.mic.frame.model.user.User;
 import com.mic.message.fragment.MessageFragment;
 import com.mic.news.fragment.NewsFragment;
 import com.mic.user.fragment.UserFragment;
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void eventTest(User user){
-       Toast.makeText(this,"main"+user.age,Toast.LENGTH_LONG).show();
+       Toast.makeText(this,"main",Toast.LENGTH_LONG).show();
     }
 
 
