@@ -10,7 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.mic.libretrofit.http.FRetrofit;
+import com.mic.libretrofit.http.FRetrofitClient;
 import com.mic.xsample.R;
+import com.mic.xsample.service.FUserApi;
 import com.mic.xsample.view.LoveLayout;
 import com.mic.xsample.xaspect.CheckNet;
 
@@ -43,12 +46,19 @@ public class LoveLayoutFragment extends Fragment implements View.OnClickListener
     }
 
 
-    @CheckNet
+   // @CheckNet
     @Override
     public void onClick(View v) {
         //mLoveLayout.addLove();
 
+        login("java","java");
 
+    }
+
+
+    private void login(String name,String password){
+        FRetrofit fRetrofit =FRetrofitClient.getInstance().getfRetrofit();
+        fRetrofit.create(FUserApi.class).login("java","java");
     }
 
     @CheckNet

@@ -1,4 +1,4 @@
-package com.mic.frame.retrofit;
+package com.mic.frame.rxretrofit;
 
 
 import android.util.Log;
@@ -35,6 +35,14 @@ public class RetrofitClient {
                                 }
                             }).setLevel(HttpLoggingInterceptor.Level.BODY))
                             .build();
+
+        mRetrofit = new Retrofit.Builder()
+                .baseUrl(Host.baseurl)
+                // 添加解析转换工厂,Gson 解析，Xml解析，等等
+                .addConverterFactory(GsonConverterFactory.create())
+                // 添加 OkHttpClient,不添加默认就是 光杆 OkHttpClient
+                .client(mOkHttpClient)
+                .build();
     }
 
     public static RetrofitClient getInstance(){
@@ -43,17 +51,6 @@ public class RetrofitClient {
 
 
     public Retrofit  getRetrofit(){
-
-        if(mRetrofit==null){
-            mRetrofit = new Retrofit.Builder()
-                    .baseUrl(Host.baseurl)
-                    // 添加解析转换工厂,Gson 解析，Xml解析，等等
-                    .addConverterFactory(GsonConverterFactory.create())
-                    // 添加 OkHttpClient,不添加默认就是 光杆 OkHttpClient
-                    .client(mOkHttpClient)
-                    .build();
-        }
-
         return mRetrofit;
     }
 }

@@ -1,4 +1,4 @@
-package com.mic.frame.retrofit;
+package com.mic.frame.rxretrofit;
 
 import com.google.gson.Gson;
 

@@ -1,13 +1,9 @@
 package com.mic.xsample.retrofit;
 
 import android.support.test.runner.AndroidJUnit4;
-import com.mic.frame.retrofit.RetrofitClient;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 @RunWith(AndroidJUnit4.class)
 public class RetrofitTest {

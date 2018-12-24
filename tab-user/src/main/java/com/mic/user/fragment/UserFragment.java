@@ -10,23 +10,32 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.mic.frame.model.Result;
-import com.mic.frame.retrofit.HttpCallback;
-import com.mic.frame.retrofit.RetrofitClient;
-import com.mic.libcore.fragment.BaseFragment;
-import com.mic.frame.model.user.User;
 import com.mic.frame.Host;
+import com.mic.frame.model.Result;
+import com.mic.frame.model.user.User;
+import com.mic.frame.rxretrofit.HttpCallback;
+import com.mic.frame.rxretrofit.RetrofitClient;
+import com.mic.frame.rxretrofit.RxObserver;
+import com.mic.frame.rxretrofit.RxResult;
+import com.mic.frame.rxretrofit.RxRetrofitClient;
+import com.mic.frame.rxretrofit.RxSchedulers;
+import com.mic.libcore.fragment.BaseFragment;
 import com.mic.user.R;
 import com.mic.user.UURL;
-
+import com.mic.user.api.RxUserApi;
 import com.mic.user.api.UserApi;
-import com.mic.user.model.UserResult;
+
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.IOException;
 
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -92,11 +101,71 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
         int i = v.getId();
         if (i == R.id.login) {
             //login();
-            login("java","java");
+            //login("java","java");
+            //rxLogin("java","java");
+            rxLoginWrapper("java","java");
         }
     }
 
+    private void rxLoginWrapper(String name,String password){
 
+        RxRetrofitClient.getInstance().getRetrofit().create(RxUserApi.class)
+                .login("java","java").compose(RxSchedulers.io_main())
+                .compose(RxResult.result())
+                .subscribe(new RxObserver<User>() {
+                    @Override
+                    protected void onError(String errorCode, String errorMessage) {
+                        int a =0;
+                    }
+
+                    @Override
+                    public void onNext(User user) {
+                       int b =5;
+                    }
+                });
+
+
+
+
+
+    }
+
+
+    private void rxLogin(String name,String password){
+        Retrofit retrofit =RxRetrofitClient.getInstance().getRetrofit();
+        RxUserApi rxUserApi =retrofit.create(RxUserApi.class);
+        Observable<Result<User>> observable =rxUserApi.login(name,password);
+
+        observable
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Result<User>>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+                        int a=2;
+                    }
+
+                    @Override
+                    public void onNext(Result<User> userResult) {
+
+                        User user = (User) userResult.data;
+                        int a =3;
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                          int a =3;
+                    }
+
+                    @Override
+                    public void onComplete() {
+                          int c =3;
+                    }
+                });
+
+
+    }
 
     private void login(String name,String password){
         Retrofit retrofit =RetrofitClient.getInstance().getRetrofit();
