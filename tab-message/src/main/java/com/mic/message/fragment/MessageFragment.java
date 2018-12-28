@@ -7,7 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.mic.libcore.fragment.BaseFragment;
+
+import com.mic.frame.common.BaseFragment;
 import com.mic.message.R;
 
 /**

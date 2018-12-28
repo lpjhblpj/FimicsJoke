@@ -1,9 +1,10 @@
-apply from : rootProject.file('build_library.gradle') //去rootProject工程下找 并把该文件内容引入进来
+apply from: rootProject.file('build_library.gradle') //去rootProject工程下找 并把该文件内容引入进来
 
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    apply from :rootProject.file('build_depends.gradle')
+    implementation 'com.android.support:support-v4:28.0.0'
+    apply from: rootProject.file('build_depends.gradle')
 
     api project(':app-core')
     api project(':libwidget')
@@ -17,8 +18,3 @@ android {
         targetCompatibility = '1.8'
     }
 }
-
-
-
-
-

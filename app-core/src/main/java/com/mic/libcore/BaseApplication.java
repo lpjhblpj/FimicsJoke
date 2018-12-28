@@ -2,7 +2,7 @@ package com.mic.libcore;
 
 import android.app.Application;
 
-import com.mic.libcore.common.ExceptionCrashHandler;
+import com.mic.libcore.utils.crash.ExceptionCrashHandler;
 
 public class BaseApplication  extends Application{
     @Override

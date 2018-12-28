@@ -4,7 +4,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,24 +19,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.mic.frame.common.BaseFragment;
 import com.mic.home.fragment.HomeFragment;
 import com.mic.joke.R;
 import com.mic.joke.view.Bottom;
 import com.mic.joke.view.BottomLayout;
-import com.mic.libcore.fragment.BaseFragment;
-import com.mic.frame.model.user.User;
 import com.mic.message.fragment.MessageFragment;
 import com.mic.news.fragment.NewsFragment;
-import com.mic.user.fragment.UserFragment;
+import com.mic.user.userinfo.UserFragment;
 import com.mic.video.fragment.VideoFragment;
 
 import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
-@SuppressWarnings("unused")
+@SuppressWarnings("all")
 public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
@@ -49,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EventBus.getDefault().register(this);
         setContentView(R.layout.activity_main);
 
 
@@ -60,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSelected(int index) {
                mViewPager.setCurrentItem(index,true);
-               EventBus.getDefault().post(new User(index));
             }
         });
 
@@ -103,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
     private void initView(){
         bottomLayout=this.findViewById(R.id.bottom_layoty);
         mViewPager=this.findViewById(R.id.view_pager);
-
     }
 
     private void initData() {
@@ -122,18 +116,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    public void eventTest(User user){
-       Toast.makeText(this,"main",Toast.LENGTH_LONG).show();
-    }
-
-
     private void initViewPager() {
 
-        mViewPager.setOffscreenPageLimit(20);
+        mViewPager.setOffscreenPageLimit(1);
         mViewPager.setPageMargin(10);
-        mViewPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
+
+        mViewPager.setAdapter(new FragmentStatePagerAdapter(getSupportFragmentManager()) {
 
 
             @Override

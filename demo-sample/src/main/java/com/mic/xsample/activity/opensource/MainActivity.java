@@ -12,7 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.mic.libcore.activity.BaseActivity;
+
+import com.mic.frame.common.BaseActivity;
 import com.mic.libcore.hotfix.FixDexManager;
 import com.mic.xsample.R;
 import com.mic.xsample.UserAidl;

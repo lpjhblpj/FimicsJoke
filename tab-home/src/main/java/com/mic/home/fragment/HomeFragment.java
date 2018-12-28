@@ -10,9 +10,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mic.frame.common.BaseFragment;
 import com.mic.home.adapter.FruitAdapter;
 import com.mic.home.moded.Fruit;
-import com.mic.libcore.fragment.BaseFragment;
+
 import com.mic.home.R;
 
 import java.util.ArrayList;

@@ -14,7 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.mic.libcore.utils.Device;
+
+import com.mic.libcore.utils.system.DisplayUtil;
 
 import java.util.ArrayList;
 
@@ -59,8 +60,8 @@ public class BottomLayout extends RelativeLayout implements View.OnClickListener
     public BottomLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         this.setBackgroundColor(Color.parseColor(defBgColor));
-        this.mWidth= (int) Device.Display.screenWH(context)[0];
-        this.mDensity =Device.Display.density(context);
+        this.mWidth= (int) DisplayUtil.getScreenWidth(context);
+        this.mDensity =DisplayUtil.getScreenDensity(context);
     }
 
     @Override

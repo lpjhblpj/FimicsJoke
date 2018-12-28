@@ -13,7 +13,8 @@ import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.mic.libcore.utils.Device;
+
+import com.mic.libcore.utils.system.DisplayUtil;
 import com.mic.xsample.R;
 
 import java.util.ArrayList;
@@ -109,7 +110,7 @@ public class AllViewActivity extends AppCompatActivity {
                 convertView = View.inflate(mContext,R.layout.gridview_item,null);
                 holder.item = convertView.findViewById(R.id.tv_gridview_item);
 
-                int screenWidth = Device.Display.screenWH(mContext)[0];
+                int screenWidth = DisplayUtil.getScreenWidth(mContext);
                 int itemWidth = screenWidth/4;
 
                 LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(itemWidth,itemWidth);
