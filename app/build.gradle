@@ -27,9 +27,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     apply from :rootProject.file('build_depends.gradle')
-    api project(':tab-home')
-    api project(':tab-news')
-    api project(':tab-video')
-    api project(':tab-message')
-    api project(':tab-user')
+    if(!isApp.toBoolean()){
+        api project(':tab-home')
+        api project(':tab-news')
+        api project(':tab-video')
+        api project(':tab-message')
+        api project(':tab-user')
+    }
+
 }

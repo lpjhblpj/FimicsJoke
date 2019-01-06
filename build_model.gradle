@@ -1,4 +1,4 @@
-if (!isApp.toBoolean()) {
+if (isApp.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
@@ -36,7 +36,7 @@ android {
 
     sourceSets {
         main {
-            if (!isApp.toBoolean()) {
+            if (isApp.toBoolean()) {
                 manifest.srcFile 'src/main/debug/AndroidManifest.xml'
                 //在release模式中排除debug文件夹中所有的java文件
                 java {
