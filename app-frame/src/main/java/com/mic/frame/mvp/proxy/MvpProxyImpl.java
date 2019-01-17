@@ -7,6 +7,8 @@ import com.mic.frame.mvp.base.BaseView;
 import com.mic.frame.mvp.inject.InjectPresenter;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,16 +32,30 @@ public class MvpProxyImpl<V extends BaseView> implements IMvpProxy{
                 // 创建注入
                 Class<? extends BasePresenter> presenterClazz = null;
                 // 自己去判断一下类型？ 获取继承的父类，如果不是 继承 BasePresenter 抛异常
-                try {
-                    presenterClazz = (Class<? extends BasePresenter>) field.getType();
-                } catch (Exception e){
-                    // 乱七八糟一些注入
-                    throw new RuntimeException("No support inject presenter type " + field.getType().getName());
+
+                presenterClazz = (Class) field.getType();
+
+                //判断这个Class 是不是继承BasePresenter ,如果不是抛出异常
+                if(!BasePresenter.class.isAssignableFrom(presenterClazz)){
+                    throw  new RuntimeException("no support type is "+presenterClazz.getName());
                 }
+
+//                try {
+//
+//                    //(Class<? extends BasePresenter>) =class
+//                    //编译器在运行时候会对我们的泛型进行擦除(一般是针对系统的)
+//
+//                    presenterClazz = (Class<? extends BasePresenter>) field.getType();
+//                } catch (Exception e){
+//                    // 乱七八糟一些注入
+//                    throw new RuntimeException("No support inject presenter type " + field.getType().getName());
+//                }
+
+                BasePresenter basePresenter =null;
 
                 try {
                     // 创建 Presenter 对象
-                    BasePresenter basePresenter = presenterClazz.newInstance();
+                    basePresenter = presenterClazz.newInstance();
                     // 并没有解绑，还是会有问题，这个怎么办？1 2
                     basePresenter.attach(mView);
                     // 设置
@@ -49,8 +65,42 @@ public class MvpProxyImpl<V extends BaseView> implements IMvpProxy{
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
+
+                // 检查我们的View层是否实现了BasePresent的View接口
+
+                checkView(basePresenter);
+
             }
         }
+    }
+
+    private void checkView(BasePresenter basePresenter){
+
+        //1.Presenter的View接口
+        Type[] params =((ParameterizedType)basePresenter.getClass().getGenericSuperclass()).getActualTypeArguments();
+
+        Class viewClazz = (Class) params[0];
+        //2.要拿到View 层的所有接口
+
+        Class<?>[] viewClasses =mView.getClass().getInterfaces();
+
+        //3.View层没有实现就抛异常
+
+        boolean isImplementsView = false;
+
+        //判断view是否实现了basePresenter接口
+        for (Class viiewClass:viewClasses){
+            if(viiewClass.isAssignableFrom(viewClazz)){
+               isImplementsView=true;
+            }
+        }
+
+
+        if(isImplementsView){
+            throw  new RuntimeException(mView.getClass().getSimpleName()+"view must implements:"+viewClazz.getName());
+        }
+
+
     }
 
     @Override
