@@ -89,7 +89,7 @@ ext {
                 'butterknife'         : 'com.jakewharton:butterknife:8.8.1',
                 'butterknifeCompiler' : 'com.jakewharton:butterknife-compiler:8.8.1',
 
-                 //EventBus
+                 //EventBus3.0.0
                  'eventbus'           :'org.greenrobot:eventbus:3.0.0',
                  ]
 }
